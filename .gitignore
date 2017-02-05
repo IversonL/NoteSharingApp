@@ -1,3 +1,25 @@
+# Created by http://gitignore.io
+
+tmp
+
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+logo.ai
+
+gh-pages
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+### Windows ###
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
@@ -8,40 +30,73 @@ Desktop.ini
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
+### Linux ###
+.*
+!.gitignore
+!.git*
+*~
 
-# Windows shortcuts
-*.lnk
 
-# =========================
-# Operating System Files
-# =========================
+### Eclipse ###
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
 
-# OSX
-# =========================
+# External tool builders
+.externalToolBuilders/
 
-.DS_Store
-.AppleDouble
-.LSOverride
+# Locally stored "Eclipse launch configurations"
+*.launch
 
-# Thumbnails
-._*
+# CDT-specific
+.cproject
 
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
+# PDT-specific
+.buildpath
 
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
+### TextMate ###
+*.tmproj
+*.tmproject
+tmtags
+
+### SublimeText ###
+# SublimeText project files
+*.sublime-workspace
+
+### Node ###
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+npm-debug.log
+node_modules
+
+### Bower ###
+bower_components
+
+experiments
+site/output
+site/tmp
+
+site/crash.log
+site/Gemfile.lock
