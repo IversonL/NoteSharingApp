@@ -1,15 +1,32 @@
 <style>
   canvas {padding:5%; border:2px solid #330000; background-color:; border-radius:10px;}
   canvas { height:100%; width:100%; }
+
+  .fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
 </style>
 
 <div class="scrollable">
     <div class="scrollable-content section">
 
           <canvas id="capturedPhoto"> </canvas>
-          <div class="input-group">
-              <span class="input-group-addon" id="basic-addon1"></span>
-            <input type="file" accept="image/*" class="form-control" onchange="picChange(event)"/></input>
+          <div class="fileUpload btn btn-primary">
+            <span>Upload</span>
+            <input type="file" accept="image/*" class="upload" onchange="picChange(event)"/></input>
           </div>
 
     </div>
