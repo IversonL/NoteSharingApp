@@ -7,42 +7,70 @@ var app = angular.module('AngularUIBucketApp', [
 
 app.controller('MainController', ['$scope','$firebaseSimpleLogin','$location',
     function($scope,$firebaseSimpleLogin,$location) {
+    	counter = 0
+	$scope.pay = function() {
+    	$location.path('/userPay');       // redirect to home page after logout
+	}
 
-        var ref = new Firebase("https://burning-fire-1723.firebaseio.com");
-        var auth = $firebaseSimpleLogin(ref);
-
-        // Initialized the user object
-        $scope.user = {
-            username: "",
-            password: ""
-        };
-
-	$scope.logout = function() {
-    $scope.loggedIn = false;   // to toggle display of SignUp/Logout
-    $scope.user = {            // re init the user object
-        username: "",
-        password: ""
-    };
-    $location.path('/');       // redirect to home page after logout
+    $scope.userHome = function() {
+    	$location.path('/userHome');    
+	}
+	$scope.signIn = function() {
+		$location.path('/signIn');
+	}
+	$scope.signUp = function() {
+		$location.path('/signUp');
+	}
+	$scope.classNotes = function() {
+		$location.path('/classNotes');
+	}
+	// Opens up the image page
+	// $scope.modal = function(){
+	// // Get the modal
+	// 	$scope.listObject = event.target.src;
+	// 	$scope.modal = document.getElementById('modal');
+	// // Displays the modal
+	// 	$scope.modal.style.display = "block";
+	// }
+	// // Closes the modal
+	// $scope.modalclose = function(){
+	// 	modal.style.display = "none";
+	// }
+	$scope.numfuck = function() {
+		counter += 1;
+		window.alert(counter);
+	}
+	$scope.modal = function(){
+		$scope.listObject = event.target.src;
+		modal = document.getElementById('modal');
+		modal.style.display = "block";
+	}
+	$scope.modalclose = function(){
+		modal.style.display = "none";
+	}
 }
-
-  $scope.scrollPageFunc = function() {
-    $location.path('/scrollPage');       // redirect to home page after logout
-  }
-
-
-
-    }
 ]);
 
 app.config(function($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
-        templateUrl: "userHome.html"
+        templateUrl: "signIn.html"
     });
     $routeProvider.when('/userHome', {
-    templateUrl: 'userHome.html'
-});
-    $routeProvider.when('/scrollPage', {
-    templateUrl: 'scrollPage.html'
+    templateUrl: 'classNotes.html'
+	});
+    $routeProvider.when('/userPay', {
+    templateUrl: 'userPay.html'
+    });
+    $routeProvider.when('/signUp', {
+    templateUrl: 'signUp.html'
+    });
+    $routeProvider.when('/signIn', {
+	templateUrl: "signIn.html"
+    });
+    $routeProvider.when('/classNotes', {
+	templateUrl: "classNotes.html"
+    });
+    $routeProvider.when('/imgpage', {
+	templateUrl: "imgpage.html"
     });
 });
