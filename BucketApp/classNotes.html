@@ -56,7 +56,7 @@ div.img img {
 }
 
 /* Add Animation */
-.modal-content, #caption {    
+.modal-content, #caption {
     -webkit-animation-name: zoom;
     -webkit-animation-duration: 0.3s;
     animation-name: zoom;
@@ -64,12 +64,12 @@ div.img img {
 }
 
 @-webkit-keyframes zoom {
-    from {-webkit-transform: scale(0)} 
+    from {-webkit-transform: scale(0)}
     to {-webkit-transform: scale(1)}
 }
 
 @keyframes zoom {
-    from {transform: scale(0.1)} 
+    from {transform: scale(0.1)}
     to {transform: scale(1)}
 }
 /*The close button*/
@@ -96,28 +96,16 @@ div.img img {
 }
 </style>
 
+<!--Loads images-->
 <div class="scrollable">
     <div class="scrollable-content section">
-
         <div class="img">
-            <img src="bicboi.png" id="bicboi" ng-click="modal()"> 
-        </div>
-
-        <div class="img">
-            <img src="bicboi_two.png" alt="Forest" ng-click="modal()">
-        </div>
-
-        <div class="img">
-            <img src="bicboi_three.png" ng-click="imgpage()">
-        </div>
-
-        <div class="img">
-            <img src="bicboi_four.png" ng-click="imgpage()">
+            <img class="img-rounded" ng-repeat="img in imgArray" ng-src="{{ img }}" ng-click="modal()"></img>
         </div>
     </div>
-   
 </div>
 
+<!--Modal that displays a caption/description that is attached to an image-->
 <div ui-content-for="modals">
   <div id="modal" class="modal" ui-if='modal2' ui-shared-state='modal2'>
     <div class="modal-dialog">
@@ -128,7 +116,7 @@ div.img img {
           <h4 class="modal-title"> Notes</h4>
         </div>
         <div class="modal-body">
-            <p>Say some fucking gay shit</p>
+            <p>Description of picture</p>
                 <div class="img">
                 <img ng-src="{{ listObject }}"> </img>
                 </div>
