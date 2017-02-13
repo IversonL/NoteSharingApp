@@ -8,13 +8,19 @@ var app = angular.module('AngularUIBucketApp', [
 app.controller('MainController', ['$scope','$firebaseSimpleLogin','$location',
     function($scope,$firebaseSimpleLogin,$location) {
     	counter = 0
+
 	$scope.pay = function() {
     	$location.path('/userPay');       // redirect to home page after logout
 	}
 
     $scope.userHome = function() {
-    	$location.path('/userHome');    
+    	$location.path('/userHome');
 	}
+
+  $scope.imgpageFunc = function(){
+    $location.path('/imgpage');
+
+  }
 	$scope.signIn = function() {
 		$location.path('/signIn');
 	}
@@ -53,7 +59,7 @@ app.controller('MainController', ['$scope','$firebaseSimpleLogin','$location',
 
 app.config(function($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
-        templateUrl: "signIn.html"
+        templateUrl: "classNotes.html"
     });
     $routeProvider.when('/userHome', {
     templateUrl: 'classNotes.html'
