@@ -29,7 +29,6 @@
   <!--Sidebar-->
    <div class="sidebar sidebar-left" toggleable parent-active-class="sidebar-left-in" id="Sidebar">
     <h1 class="app-name">Sidebar</h1>
-
     <div class="scrollable">
       <div class="scrollable-content">
         <div class="list-group" toggle="off" bubble target="Sidebar">
@@ -91,6 +90,7 @@
               ctx.drawImage(photo, 0, 0, 500, 400);
               };
               photo.src = picURL;
+              img[0] = photo.src
               windowURL.revokeObjectURL(picURL);
         }
 

@@ -1,5 +1,5 @@
 <style>
-  canvas {padding:5%; border:2px solid #330000; background-color:; border-radius:10px;}
+  canvas {padding:5%; border:0 solid #330000; background-color:; border-radius:10px;}
   canvas { height:100%; width:100%; }
 
   .fileUpload {
@@ -31,3 +31,13 @@
 
     </div>
 </div>
+
+<script>
+window.onload = function() {
+  alert("test")
+  var photoCanvas = document.getElementById("capturedPhoto");
+  var ctx = photoCanvas.getContext("2d");
+  img = "assets/images/imagePlaceHolder.png";
+  ctx.drawImage(img,0,0);
+}
+</script>

@@ -42,6 +42,8 @@ app.controller('MainController', ['$scope','$firebaseSimpleLogin','$location',
 	// $scope.modalclose = function(){
 	// 	modal.style.display = "none";
 	// }
+
+  
 	$scope.numfuck = function() {
 		counter += 1;
 		window.alert(counter);
@@ -56,7 +58,6 @@ app.controller('MainController', ['$scope','$firebaseSimpleLogin','$location',
 	}
 
   $scope.imgHolder = [
-    
   ];
 }
 ]);
