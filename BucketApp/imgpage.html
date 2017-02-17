@@ -1,7 +1,10 @@
 <style>
   canvas {padding:5%; border:0 solid #330000; background-color:; border-radius:10px;}
   canvas { height:100%; width:100%; }
-
+  canvas {
+    background: url('./assets/images/imagePlaceHolder.png');
+    background-size: 100% 100%;
+  }
   .fileUpload {
     position: relative;
     overflow: hidden;
@@ -20,24 +23,16 @@
 }
 </style>
 
+
+
 <div class="scrollable">
     <div class="scrollable-content section">
 
           <canvas id="capturedPhoto"> </canvas>
           <div class="fileUpload btn btn-primary btn-block">
             <span>Upload</span>
-            <input type="file" accept="image/*" class="upload" onchange="picChange(event)"/></input>
+            <input type="file" accept="image/*" class="upload" onchange="picChange(event)"  ng-click = ""/></input>
           </div>
 
     </div>
 </div>
-
-<script>
-window.onload = function() {
-  alert("test")
-  var photoCanvas = document.getElementById("capturedPhoto");
-  var ctx = photoCanvas.getContext("2d");
-  img = "assets/images/imagePlaceHolder.png";
-  ctx.drawImage(img,0,0);
-}
-</script>

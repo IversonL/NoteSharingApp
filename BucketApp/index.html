@@ -88,9 +88,9 @@
             photo.onload = function(){
             //draw photo into canvas when ready
               ctx.drawImage(photo, 0, 0, 500, 400);
-              };
+            };
               photo.src = picURL;
-              img[0] = photo.src
+              img[0] = picURL;
               windowURL.revokeObjectURL(picURL);
         }
 
