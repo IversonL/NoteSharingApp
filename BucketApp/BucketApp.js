@@ -55,7 +55,7 @@ app.controller('MainController', ['$scope','$firebaseSimpleLogin','$location',
 		modal.style.display = "none";
 	}
 
-  $scope.imgHolder = [ "http://i.makeagif.com/media/5-07-2014/cRZAPi.gif"
+  $scope.imgHolder = [ "https://pbs.twimg.com/media/CMYegi-VAAAARkE.jpg", "http://i.makeagif.com/media/5-07-2014/cRZAPi.gif"
   ];
 }
 ]);
