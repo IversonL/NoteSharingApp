@@ -28,11 +28,10 @@
 <div class="scrollable">
     <div class="scrollable-content section">
 
-          <canvas id="capturedPhoto"> </canvas>
-          <div class="fileUpload btn btn-primary btn-block">
+          <canvas id="capturedPhoto">  <input type="file" accept="image/*" class="upload" onchange="picChange(event)"/></input> </canvas>
+          <div id = "upload" class="fileUpload btn btn-primary btn-block">
             <span>Upload</span>
             <input type="file" accept="image/*" class="upload" onchange="picChange(event)"/></input>
           </div>
-
     </div>
 </div>

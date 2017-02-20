@@ -73,7 +73,6 @@
     <div class="app-body">
         <ng-view class="app-content"></ng-view>
     </div>
-
 </div>
   <script>
       function picChange(evt){
@@ -87,6 +86,7 @@
             photo.onload = function(){
             //draw photo into canvas when ready
               ctx.drawImage(photo, 0, 0, photo.width, photo.height,0, 0, photoCanvas.width, photoCanvas.height);
+
             };
               photo.src = picURL;
         }
