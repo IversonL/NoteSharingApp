@@ -99,8 +99,11 @@ div.img img {
 <div class="scrollable">
     <div class="scrollable-content section">
 
-        <div class="img">
-            <img class="img-rounded" ng-repeat="img in imgHolder" src="{{ img }}" ng-click="modal()"></img>
+        <div ng-repeat="img in imgHolder">
+            <img width="500" height="500" class="img" src="{{ img.image }}" ng-click="modal()"></img><br />
+            <button ng-click="likeStatus(img); setTotal(img);"><i class="fa fa-thumbs-up"></i>Like</button>
+            <button ng-click="dislikeStatus(img); setTotal(img);"><i class="fa fa-thumbs-down"></i>Dislike</button>
+            {{ img.showLiked }} liked this ({{ img.ratio }}% of people have liked this)
         </div>
 
     </div>

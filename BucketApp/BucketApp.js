@@ -58,8 +58,36 @@ app.controller('MainController', ['$scope','$firebaseSimpleLogin','$location',
 		modal.style.display = "none";
 	}
 
-  $scope.imgHolder = [ "https://pbs.twimg.com/media/CMYegi-VAAAARkE.jpg", "http://i.makeagif.com/media/5-07-2014/cRZAPi.gif"
+  $scope.imgHolder = [ 
+	  {image: "https://pbs.twimg.com/media/CMYegi-VAAAARkE.jpg",
+	  likes: 9,
+	  dislikes: 0,
+	  showLiked: this.likes,
+	  total: this.likes,
+	  ratio: 0}, 
+	  {image: "http://i.makeagif.com/media/5-07-2014/cRZAPi.gif",
+	  likes: 7,
+	  dislikes: 0,
+	  showLiked: this.likes,
+	  total: this.likes,
+	  ratio: 0}
   ];
+
+  $scope.likeStatus = function(img){
+	  img.likes = img.likes + 1;
+	  img.showLiked = img.likes - img.dislikes
+	  img.total = img.likes + img.dislikes;
+  }
+
+  $scope.dislikeStatus = function(img){
+	  img.dislikes = img.dislikes + 1;
+	  img.showLiked = img.likes - img.dislikes
+	  img.total = img.likes + img.dislikes;
+  }
+
+  $scope.setTotal = function(img) {
+	  img.ratio = ((img.likes / img.total) * 100).toFixed(2);
+  }
 }
 ]);
 
