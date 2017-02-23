@@ -58,13 +58,13 @@ app.controller('MainController', ['$scope','$firebaseSimpleLogin','$location',
 		modal.style.display = "none";
 	}
 
-  $scope.imgHolder = [ 
+  $scope.imgHolder = [
 	  {image: "https://pbs.twimg.com/media/CMYegi-VAAAARkE.jpg",
 	  likes: 9,
 	  dislikes: 0,
 	  showLiked: this.likes,
 	  total: this.likes,
-	  ratio: 0}, 
+	  ratio: 0},
 	  {image: "http://i.makeagif.com/media/5-07-2014/cRZAPi.gif",
 	  likes: 7,
 	  dislikes: 0,
@@ -73,6 +73,10 @@ app.controller('MainController', ['$scope','$firebaseSimpleLogin','$location',
 	  ratio: 0}
   ];
 
+  $scope.imgClassList = [
+    {img:"http://previews.123rf.com/images/sborisov/sborisov1007/sborisov100700041/7370512-Close-up-of-computer-circuit-board-Stock-Photo.jpg",
+    txt: "Computer Science 145"}
+  ];
   $scope.likeStatus = function(img){
 	  img.likes = img.likes + 1;
 	  img.showLiked = img.likes - img.dislikes
@@ -93,10 +97,10 @@ app.controller('MainController', ['$scope','$firebaseSimpleLogin','$location',
 
 app.config(function($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
-        templateUrl: "classNotes.html"
+        templateUrl: "userHome.html"
     });
     $routeProvider.when('/userHome', {
-    templateUrl: 'classNotes.html'
+    templateUrl: 'userHome.html'
 	});
     $routeProvider.when('/userPay', {
     templateUrl: 'userPay.html'

@@ -1,8 +1,42 @@
+<style>
+.caption {
+        width:100%;
+        bottom: .0rem;
+        position: absolute;
+        background:#000;
+        background: -webkit-linear-gradient(bottom, #000 40%, rgba(0, 0, 0, 0) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+        background: -moz-linear-gradient(bottom, #000 40%, rgba(0, 0, 0, 0) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+        background: -o-linear-gradient(bottom, #000 40%, rgba(0, 0, 0, 0) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+        background: linear-gradient(to top, #000 40%, rgba(0, 0, 0, 0) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    }
+
+    .caption h4 {
+        color: #fff;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .thumbnail {
+        border: 0 none;
+        box-shadow: none;
+        margin:0;
+        padding:0;
+    }
+
+</style>
+
 <div class="container">
-    <div class="jumbotron">
-        <h1>Welcome !!</h1>
-        <p class="lead"><i>{{userEmailId}}</i> Here is your Dashboard</p>
+  <div class = "scrollable">
+    <div align = "center" class = "scrollable-content section">
+      <h1>Class List</h1>
+      <div class = "img">
+        <div class ="col-sm-12 thumbnail text-center">
+          <img class = "img-rounded" ng-repeat = "img in imgClassList" src = "{{img.img}}" ng-click = ""/>
+          <div class="caption" ng-repeat = "txt in imgClassList">
+            <h4>{{txt.txt}}</h4>
+          </div>
 
+        </div>
+      </div>
     </div>
-
+  </div>
 </div>
