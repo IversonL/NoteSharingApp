@@ -28,10 +28,11 @@
 <div class="scrollable">
     <div class="scrollable-content section">
 
-          <canvas id="capturedPhoto">  <input type="file" accept="image/*" class="upload" onchange="picChange(event)"/></input> </canvas>
+          <canvas id="capturedPhoto"></canvas>
           <div id = "upload" class="fileUpload btn btn-primary btn-block">
             <span>Upload</span>
-            <input type="file" accept="image/*" class="upload" onchange="picChange(event)"/></input>
+            <input type="file" accept="image/*" class="upload" onChange = "picChange(event)" ng-click = "angular.element(this).scope().uploadFile(this.files)"/></input>
           </div>
+          <button class="fileUpload btn btn-primary btn-block" ng-click = "infoPage()">Use</button>
     </div>
 </div>

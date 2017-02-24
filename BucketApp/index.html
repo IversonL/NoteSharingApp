@@ -24,7 +24,7 @@
     <script src="BucketApp.js"></script>
 </head>
 
-<body ng-app="AngularUIBucketApp" ng-controller="MainController">
+<body id ="main" ng-app="AngularUIBucketApp" ng-controller="MainController">
   <!--Sidebar-->
    <div class="sidebar sidebar-left" toggleable parent-active-class="sidebar-left-in" id="Sidebar">
     <h1 class="app-name">Ed-Kit</h1>
@@ -33,6 +33,9 @@
         <div class="list-group" toggle="off" bubble target="Sidebar">
           <a class="list-group-item" href="#/">Home<i class="fa fa-chevron-right pull-right"></i></a>
           <a class="list-group-item" href="#/classNotes">My Notes<i class="fa fa-chevron-right pull-right"></i></a>
+          <a class="list-group-item" href="#">Used Textbooks<i class="fa fa-chevron-right pull-right"></i></a>
+          <a class="list-group-item" href="#">Tutor Services<i class="fa fa-chevron-right pull-right"></i></a>
+          <a class="list-group-item" href="#">Teacher Questions<i class="fa fa-chevron-right pull-right"></i></a>
         </div>
 
       </div>
@@ -75,23 +78,24 @@
     </div>
 </div>
   <script>
-      function picChange(evt){
-        var fileInput = evt.target.files;
-        if(fileInput.length>0){
-            var windowURL = window.URL || window.webkitURL;
-            var picURL = windowURL.createObjectURL(fileInput[0]);
-            var photoCanvas = document.getElementById("capturedPhoto");
-            var ctx = photoCanvas.getContext("2d");
-            var photo = new Image();
-            photo.onload = function(){
-            //draw photo into canvas when ready
-              ctx.drawImage(photo, 0, 0, photo.width, photo.height,0, 0, photoCanvas.width, photoCanvas.height);
-
-            };
-              photo.src = picURL;
-        }
-
+  function picChange(evt){
+      var fileInput = evt.target.files;
+      if(fileInput.length>0){
+          var windowURL = window.URL || window.webkitURL;
+          var picURL = windowURL.createObjectURL(fileInput[0]);
+          var photoCanvas = document.getElementById("capturedPhoto");
+          var ctx = photoCanvas.getContext("2d");
+          var photo = new Image();
+          photo.onload = function(){
+          //draw photo into canvas when ready
+            ctx.drawImage(photo, 0, 0, photo.width, photo.height,0, 0, photoCanvas.width, photoCanvas.height);
+             angular.element(document.getElementById('main')).scope().imageFunction(photo);
+          };
+            photo.src = picURL;
       }
+
+    }
+
   </script>
 </body>
 

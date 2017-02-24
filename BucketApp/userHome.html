@@ -28,11 +28,11 @@
   <div class = "scrollable">
     <div align = "center" class = "scrollable-content section">
       <h1>Class List</h1>
-      <div class = "img">
+      <div class = "img" ng-repeat = "img in imgClassList">
         <div class ="col-sm-12 thumbnail text-center">
-          <img class = "img-rounded" ng-repeat = "img in imgClassList" src = "{{img.img}}" ng-click = ""/>
-          <div class="caption" ng-repeat = "txt in imgClassList">
-            <h4>{{txt.txt}}</h4>
+          <img class = "img-rounded" src = "{{img.img}}" ng-click = "classNotes()"/>
+          <div class="caption">
+            <h4>{{img.txt}}</h4>
           </div>
 
         </div>

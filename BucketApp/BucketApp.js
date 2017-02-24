@@ -21,6 +21,9 @@ app.controller('MainController', ['$scope','$firebaseSimpleLogin','$location',
     $location.path('/imgpage');
 
   }
+  $scope.infoPage = function(){
+    $location.path('/infoPage');
+  }
 	$scope.signIn = function() {
 		$location.path('/signIn');
 	}
@@ -30,6 +33,11 @@ app.controller('MainController', ['$scope','$firebaseSimpleLogin','$location',
 	$scope.classNotes = function() {
 		$location.path('/classNotes');
 	}
+  $scope.imageFunction = function(image){
+    var photoCanvas = document.getElementById("capturedPhoto");
+    var ctx = photoCanvas.getContext("2d");
+
+  }
 	// Opens up the image page
 	// $scope.modal = function(){
 	// // Get the modal
@@ -65,7 +73,7 @@ app.controller('MainController', ['$scope','$firebaseSimpleLogin','$location',
 	  showLiked: this.likes,
 	  total: this.likes,
 	  ratio: 0},
-	  {image: "http://i.makeagif.com/media/5-07-2014/cRZAPi.gif",
+	  {image: "https://www.math.toronto.edu/drorbn/classes/0405/157AnalysisI/Classnotes/050208-2.jpg",
 	  likes: 7,
 	  dislikes: 0,
 	  showLiked: this.likes,
@@ -75,10 +83,12 @@ app.controller('MainController', ['$scope','$firebaseSimpleLogin','$location',
 
   $scope.imgClassList = [
     {img:"http://previews.123rf.com/images/sborisov/sborisov1007/sborisov100700041/7370512-Close-up-of-computer-circuit-board-Stock-Photo.jpg",
-    txt: "Computer Science 145"}
+    txt: "Computer Science 145"},
+    {img:"https://beursvanberlage.com/sites/beursvanberlage.com/files/styles/colorbox/public/content/Beurs-van-Zocher-Amsterdam-Beurs-van-Berlage_0.jpg",
+    txt: "History 100"}
   ];
   $scope.likeStatus = function(img){
-	  img.likes = img.likes + 1;
+    img.likes = img.likes + 1;
 	  img.showLiked = img.likes - img.dislikes
 	  img.total = img.likes + img.dislikes;
   }
@@ -113,6 +123,9 @@ app.config(function($routeProvider, $locationProvider) {
     });
     $routeProvider.when('/classNotes', {
 	templateUrl: "classNotes.html"
+    });
+    $routeProvider.when('/infoPage', {
+      templateUrl: "infoPage.html"
     });
     $routeProvider.when('/imgpage', {
 	templateUrl: "imgpage.html"

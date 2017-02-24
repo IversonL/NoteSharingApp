@@ -94,16 +94,45 @@ div.img img {
         width: 100%;
     }
 }
+
+.caption {
+        width:100%;
+        bottom: .0rem;
+        position: absolute;
+        background:#000;
+        background: -webkit-linear-gradient(bottom, #000 40%, rgba(0, 0, 0, 0) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+        background: -moz-linear-gradient(bottom, #000 40%, rgba(0, 0, 0, 0) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+        background: -o-linear-gradient(bottom, #000 40%, rgba(0, 0, 0, 0) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+        background: linear-gradient(to top, #000 40%, rgba(0, 0, 0, 0) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    }
+
+    .caption h4 {
+        color: #fff;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .thumbnail {
+        border: 0 none;
+        box-shadow: none;
+        margin:0;
+        padding:0;
+    }
+
 </style>
 
 <div class="scrollable">
     <div class="scrollable-content section">
 
         <div ng-repeat="img in imgHolder">
-            <img width="500" height="500" class="img" src="{{ img.image }}" ng-click="modal()"></img><br />
-            <button ng-click="likeStatus(img); setTotal(img);"><i class="fa fa-thumbs-up"></i>Like</button>
-            <button ng-click="dislikeStatus(img); setTotal(img);"><i class="fa fa-thumbs-down"></i>Dislike</button>
-            {{ img.showLiked }} liked this ({{ img.ratio }}% of people have liked this)
+          <div class ="col-sm-12 thumbnail text-center">
+            <img width="500" height="500" class="img" src="{{ img.image }}" ng-click="modal()"></img><br/>
+            <div class="caption">
+              <h4>
+                <button class="btn btn-default btn-sm" ng-click="likeStatus(img); setTotal(img);"><i class="fa fa-thumbs-up"></i></button>
+                <button class="btn btn-default btn-sm" ng-click="dislikeStatus(img); setTotal(img);"><i class="fa fa-thumbs-down"></i></button>
+                {{ img.showLiked }} liked this ({{ img.ratio }}% of people have liked this)</h4>
+            </div>
+          </div>
         </div>
 
     </div>
@@ -116,17 +145,19 @@ div.img img {
       <div class="modal-content">
         <div class="modal-header">
 
-            <h4 class="modal-title"> Title of Note</h4>
+            <h4 class="modal-title">Computer Science 145: Lecture 2</h4>
         </div>
         <div class="modal-body">
-            <p>Note Example</p>
+            <p>Note Preview</p>
                 <div class="img">
                 <img ng-src="{{ listObject }}"> </img>
                 </div>
         </div>
         <div class="modal-footer">
+          <button ui-turn-off="modal2" class="btn btn-default" ng-click="modalclose()">Save</button>
           <button ui-turn-off="modal2" class="btn btn-default" ng-click="modalclose()">Close</button>
 <!--           <button ui-turn-off="modal2" class="btn btn-primary">Save changes</button> -->
+
         </div>
       </div>
     </div>
